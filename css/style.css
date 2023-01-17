@@ -1,0 +1,28 @@
+@font-face {
+    font-family: PixelMplus10-Bold;
+    src: url(../lib/css/PixelMplus10-Bold.ttf);
+}
+@font-face {
+    font-family: PixelMplus10-Regular;
+    src: url(../lib/css/PixelMplus10-Regular.ttf);
+}
+@font-face {
+    font-family: PixelMplus12-Bold;
+    src: url(../lib/css/PixelMplus12-Bold.ttf);
+}
+@font-face {
+    font-family: PixelMplus12-Regular;
+    src: url(../lib/css/PixelMplus12-Regular.ttf);
+}
+.PixelMplus10-Bold {
+    font-family: PixelMplus10-Bold;
+}
+.PixelMplus10-Regular {
+    font-family: PixelMplus10-Regular;
+}
+.PixelMplus12-Bold {
+    font-family: PixelMplus12-Bold;
+}
+.PixelMplus12-Regular {
+    font-family: PixelMplus12-Regular;
+}
