@@ -1,0 +1,21 @@
+.typing-animation {
+    width: 30ch; /* アニメーション行の長さを指定 */
+    border-right: 2px solid #000;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #000;
+    font-size: 1.0rem;
+    line-height: 1.4;
+    font-weight: 700;
+    animation: typing 3s steps(15), blink .4s step-end infinite alternate;
+}
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+@keyframes blink {
+    50% {
+        border-color: transparent; /* 点滅風に見せる */
+    }
+}
