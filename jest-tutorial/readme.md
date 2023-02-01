@@ -34,7 +34,10 @@
     * Jest の API の型定義ファイル
 
 ## note
+* 「サバイバルTypeScript」の「Jestでテストを書こう」ページを参考に練習  
+  テキスト内では yarn を使用しているが、内容的に不要なため今回は npm のみで実行した。
 * npx tsc --init 後に vscode 上で tsconfig.json がエラーになる場合、 vscode の再起動を試す。
 
 ## cf
-* https://typescriptbook.jp/tutorials/jest
+* サバイバルTypeScript Jestでテストを書こう
+    * https://typescriptbook.jp/tutorials/jest
