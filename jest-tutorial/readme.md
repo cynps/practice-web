@@ -14,12 +14,12 @@
     $ rm check.test.ts 
         ## 必要に応じて実行
         ## このリポジトリでは便宜上残している(rm してない)
-    $ 
+    $ touch isZero.ts
+        ## コードは isZero.ts 参照
+    $ touch isZero.test.ts
+        ## コードは isZero.test.ts 参照
+    $ npx jest
     ```
-
-## note
-* npm install で -g してないので(?)パスが通っていない。  
-  そのため、tsc コマンドなど、node_module 配下の実行ファイルを直接指定している。
 
 ## package
 * jest
