@@ -33,5 +33,8 @@
 * @types/jest
     * Jest の API の型定義ファイル
 
+## note
+* npx tsc --init 後に vscode 上で tsconfig.json がエラーになる場合、 vscode の再起動を試す。
+
 ## cf
 * https://typescriptbook.jp/tutorials/jest
