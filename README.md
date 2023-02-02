@@ -20,3 +20,8 @@ practice creating web app
 * Jest(JavaScrpit のテストツール)の練習
 * Jest, Typescript を使用した簡単なプログラムを実行して動作確認
 
+### 6. vuejs-tutorial
+* Vue.js の練習
+* vue-test
+    * vue3 + ts + Vitest + Pinia の練習
+
