@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { reactive, ref } from 'vue';
+import { computed } from 'vue';
+import { onMounted } from 'vue';
+import { watch } from 'vue';
 
 // step 2
 const counter = reactive({ count: 0 }); 
@@ -20,24 +23,70 @@ const text = ref('');
 // step 6
 const awesome = ref(true);
 function toggle() {
-    awesome.value = !awesome.value;
+  awesome.value = !awesome.value;
 }
 
 // step 7
 let id = 0;
 const newTodo = ref('');
 const todos = ref([
-    { id: id++, text: 'Learn HTML' },
-    { id: id++, text: 'Learn JavaScript' },
-    { id: id++, text: 'Learn Vue' }
+  { id: id++, text: 'Learn HTML' },
+  { id: id++, text: 'Learn JavaScript' },
+  { id: id++, text: 'Learn Vue' }
 ]);
 function addTodo() {
-    todos.value.push({ id: id++, text: newTodo.value });
-    newTodo.value = '';
+  todos.value.push({ id: id++, text: newTodo.value });
+  newTodo.value = '';
 }
 function removeTodo(todo: any) {
-    todos.value = todos.value.filter((t) => t !== todo); 
+  todos.value = todos.value.filter((t) => t !== todo); 
 }
+
+// step 8
+let id8 = 0;
+const newTodo8 = ref('');
+const hideCompleted = ref(false);
+const todos8 = ref([
+  { id: id8++, text: 'Learn HTML', done: true },
+  { id: id8++, text: 'Learn JavaScript', done: true },
+  { id: id8++, text: 'Learn Vue', done: false }
+]);
+const filteredTodos = computed(() => {
+  return hideCompleted.value
+    ? todos8.value.filter((t) => !t.done)
+    : todos8.value
+});
+function addTodo8() {
+  todos8.value.push({ id: id8++, text: newTodo8.value, done: false });
+  newTodo8.value = '';
+}
+function removeTodo8(todo: any) {
+  todos8.value = todos8.value.filter((t) => t !== todo);
+}
+
+// step 9
+// この辺参考
+// https://stackoverflow.com/questions/65026253/object-is-possibly-null-on-a-refnull?newreg=84e3d8cef2a04b978e686d9891f3bc7b
+// https://v3.ja.vuejs.org/guide/composition-api-template-refs.html
+const p = ref<Element | null>(null);
+onMounted(() => {
+  if (p.value !== null) p.value.textContent = 'mounted!';
+});
+
+// step 10
+const todoId = ref(1);
+const todoData = ref(null);
+watch(todoId, () => {
+  fetchData();
+});
+const fetchData = async () => {
+  todoData.value = null;
+  const res = await fetch(
+    `https://jsonplaceholder.typicode.com/todos/${todoId.value}`
+  );
+  todoData.value = await res.json();
+}
+fetchData();
 
 </script>
 
@@ -73,18 +122,43 @@ function removeTodo(todo: any) {
 
     <p>step 7: リストレンダリング</p>
     <form @submit.prevent="addTodo">
-        <input v-model="newTodo">
-        <button>Add Todo</button>
+      <input v-model="newTodo">
+      <button>Add Todo</button>
     </form>
     <ul>
-        <li v-for="todo in todos" :key="todo.id">
-            {{ todo.text }}
-            <button @click="removeTodo(todo)">X</button>
-        </li>
+      <li v-for="todo in todos" :key="todo.id">
+        {{ todo.text }}
+        <button @click="removeTodo(todo)">X</button>
+      </li>
     </ul>
     <hr />
 
-    <p>step x</p>
+    <p>step 8: 算出プロパティー</p>
+    <form @submit.prevent="addTodo8">
+      <input v-model="newTodo8">
+      <button>Add Todo</button>
+    </form>
+    <ul>
+      <li v-for="todo in filteredTodos" :key="todo.id">
+        <input type="checkbox" v-model="todo.done">
+        <span :class="{ done: todo.done }">{{ todo.text }}</span>
+        <button @click="removeTodo8(todo)">X</button>
+      </li>
+    </ul>
+    <button @click="hideCompleted = !hideCompleted">
+      {{ hideCompleted ? 'Show all' : 'Hide completed' }}
+    </button>
+    <hr />
+
+    <p>step 9: ライフサイクルとテンプレート参照</p>
+      <p ref="p">hello</p>
+    <hr />
+
+    <p>step 10: </p>
+    <p>Todo id: {{ todoId }}</p>
+    <button @click="todoId++">Fetch next todo</button>
+    <p v-if="!todoData">Loading...</p>
+    <p v-else>{{ todoData }}</p>
     <hr />
 
   </div>
@@ -93,5 +167,8 @@ function removeTodo(todo: any) {
 <style>
 .title {
     color: red;
+}
+.done {
+  text-decoration: line-through;
 }
 </style>
