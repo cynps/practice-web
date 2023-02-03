@@ -61,8 +61,11 @@ $ vi ./README.md
   https://ja.vuejs.org/tutorial/
 * Composition API faq  
   https://ja.vuejs.org/guide/extras/composition-api-faq.html
-* vue-jest  
-  https://reffect.co.jp/vue/vue-jest-test
+* testing
+  * vue-jest  
+    https://reffect.co.jp/vue/vue-jest-test
+  * vitest  
+    https://vitest.dev/guide/
 * vue-router  
   https://router.vuejs.org/installation.html
 * pinia  
