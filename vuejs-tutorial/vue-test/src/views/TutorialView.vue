@@ -154,7 +154,7 @@ fetchData();
       <p ref="p">hello</p>
     <hr />
 
-    <p>step 10: </p>
+    <p>step 10: ウォッチャー</p>
     <p>Todo id: {{ todoId }}</p>
     <button @click="todoId++">Fetch next todo</button>
     <p v-if="!todoData">Loading...</p>
