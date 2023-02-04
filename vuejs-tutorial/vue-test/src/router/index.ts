@@ -21,6 +21,52 @@ const router = createRouter({
       path: "/tutorial",
       name: "tutorial",
       component: () => import("../views/TutorialView.vue"),
+      children: [
+        {
+          path: "tutorial2",
+          component: () => import("../views/TutorialStep2View.vue"),
+        },
+        {
+          path: "tutorial3",
+          component: () => import("../views/TutorialStep3View.vue"),
+        },
+        {
+          path: "tutorial4",
+          component: () => import("../views/TutorialStep4View.vue"),
+        },
+        {
+          path: "tutorial5",
+          component: () => import("../views/TutorialStep5View.vue"),
+        },
+        {
+          path: "tutorial6",
+          component: () => import("../views/TutorialStep6View.vue"),
+        },
+        {
+          path: "tutorial7",
+          component: () => import("../views/TutorialStep7View.vue"),
+        },
+        {
+          path: "tutorial8",
+          component: () => import("../views/TutorialStep8View.vue"),
+        },
+        {
+          path: "tutorial9",
+          component: () => import("../views/TutorialStep9View.vue"),
+        },
+        {
+          path: "tutorial10",
+          component: () => import("../views/TutorialStep10View.vue"),
+        },
+        {
+          path: "tutorial11",
+          component: () => import("../views/TutorialStep11View.vue"),
+        },
+        {
+          path: "tutorial12",
+          component: () => import("../views/TutorialStep12View.vue"),
+        },
+      ]
     },
   ],
 });
