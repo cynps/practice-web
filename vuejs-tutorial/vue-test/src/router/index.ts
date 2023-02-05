@@ -74,10 +74,6 @@ const router = createRouter({
           path: "tutorial14",
           component: () => import("../views/TutorialStep14View.vue"),
         },
-        {
-          path: "tutorial15",
-          component: () => import("../views/TutorialStep15View.vue"),
-        },
       ]
     },
   ],
