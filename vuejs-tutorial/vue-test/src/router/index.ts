@@ -66,6 +66,18 @@ const router = createRouter({
           path: "tutorial12",
           component: () => import("../views/TutorialStep12View.vue"),
         },
+        {
+          path: "tutorial13",
+          component: () => import("../views/TutorialStep13View.vue"),
+        },
+        {
+          path: "tutorial14",
+          component: () => import("../views/TutorialStep14View.vue"),
+        },
+        {
+          path: "tutorial15",
+          component: () => import("../views/TutorialStep15View.vue"),
+        },
       ]
     },
   ],
