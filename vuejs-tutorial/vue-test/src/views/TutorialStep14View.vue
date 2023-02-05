@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import ChildComp from '../components/ChildCompStep13.vue';
-const childMsg = ref('No child msg yet');
+import ChildComp from '../components/ChildCompStep14.vue';
+
+const msg = ref('from parent');
 </script>
 
 <template>
-    <ChildComp @response="(msg) => childMsg = msg" />
+  <p>step 14: Slots</p>
+  <ChildComp>Message: {{ msg }}</ChildComp>
 </template>

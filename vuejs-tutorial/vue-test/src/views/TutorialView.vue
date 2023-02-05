@@ -25,6 +25,7 @@ for (let i=2; i<13; ++i) ids.push(i);
         <RouterLink to="/tutorial/tutorial11">Step 11</RouterLink>
         <RouterLink to="/tutorial/tutorial12">Step 12</RouterLink>
         <RouterLink to="/tutorial/tutorial13">Step 13</RouterLink>
+        <RouterLink to="/tutorial/tutorial14">Step 14</RouterLink>
       </nav>
     </div>
     <RouterView />
