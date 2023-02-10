@@ -2,6 +2,16 @@
 
 ## use swagger with Ubuntu/docker
 ```
+$ npm install swagger-ui
+```
+
+see:
+* https://github.com/swagger-api/swagger-ui/
+  * docs
+
+
+## use swagger with Ubuntu/docker
+```
 $ cat /etc/issue
 Ubuntu 20.04.5 LTS \n \l
 
